@@ -1,7 +1,7 @@
 \connect astronomy_db;
 
 -- Get all astronomers
-CREATE OR REPLACE PROCEDURE get_astronomers()
+CREATE OR REPLACE PROCEDURE get_astronomers() -- NEED TO BE FIXED
 LANGUAGE plpgsql
 AS $$
 DECLARE
@@ -12,7 +12,6 @@ DECLARE
     death_year INTEGER;
     country_list TEXT;
 BEGIN
-    -- Cursor para recorrer los astrónomos
     FOR rec IN
         SELECT A.id, A.name, A.birth_year, A.death_year, string_agg(C.name, ', ' ORDER BY C.name) AS countries
         FROM Astronomer A
@@ -27,7 +26,6 @@ BEGIN
         death_year := rec.death_year;
         country_list := rec.countries;
 
-        -- Imprimir resultados
         RAISE NOTICE 'Astronomer ID: %, Name: %, Birth Year: %, Death Year: %, Countries: %',
             astronomer_id, astronomer_name, birth_year, death_year, country_list;
     END LOOP;
