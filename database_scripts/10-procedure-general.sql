@@ -62,15 +62,25 @@ BEGIN
 END;
 $$;
 
--- Procedure to insert into Country
+-- Procedure to insert into Country with continent name
 CREATE OR REPLACE PROCEDURE insert_country(
     IN p_country_id TEXT,
     IN p_country_name TEXT,
-    IN p_id_continent INTEGER
+    IN p_continent_name TEXT
 )
 LANGUAGE plpgsql
 AS $$
+DECLARE
+    v_continent_id INTEGER;
 BEGIN
+    -- Get the continent ID by name
+    CALL get_continent_id(p_continent_name, v_continent_id);
+
+    -- If continent ID is NULL, raise an exception
+    IF v_continent_id IS NULL THEN
+        RAISE EXCEPTION 'Continent % not found.', p_continent_name;
+    END IF;
+
     -- Check if the country already exists by its ID
     IF EXISTS (SELECT 1 FROM Country WHERE id = p_country_id) THEN
         RAISE NOTICE 'Country with ID % already exists.', p_country_id;
@@ -78,9 +88,6 @@ BEGIN
     END IF;
 
     -- Insert the country
-    INSERT INTO Country (id, name, id_continent) VALUES (p_country_id, p_country_name, p_id_continent);
-
-    -- Commit the transaction
-    COMMIT;
+    INSERT INTO Country (id, name, id_continent) VALUES (p_country_id, p_country_name, v_continent_id);
 END;
 $$;

@@ -1,0 +1,1134 @@
+{
+    "countries": [
+        {
+            "id": "AFG",
+            "name": "Afghanistan",
+            "continent": "Asia"
+        },
+        {
+            "id": "ALB",
+            "name": "Albania",
+            "continent": "Europe"
+        },
+        {
+            "id": "DZA",
+            "name": "Algeria",
+            "continent": "Africa"
+        },
+        {
+            "id": "ASM",
+            "name": "American Samoa",
+            "continent": "Oceania"
+        },
+        {
+            "id": "AND",
+            "name": "Andorra",
+            "continent": "Europe"
+        },
+        {
+            "id": "AGO",
+            "name": "Angola",
+            "continent": "Africa"
+        },
+        {
+            "id": "AIA",
+            "name": "Anguilla",
+            "continent": "America"
+        },
+        {
+            "id": "ATG",
+            "name": "Antigua and Barbuda",
+            "continent": "America"
+        },
+        {
+            "id": "ARG",
+            "name": "Argentina",
+            "continent": "America"
+        },
+        {
+            "id": "ARM",
+            "name": "Armenia",
+            "continent": "Asia"
+        },
+        {
+            "id": "ABW",
+            "name": "Aruba",
+            "continent": "America"
+        },
+        {
+            "id": "AUS",
+            "name": "Australia",
+            "continent": "Oceania"
+        },
+        {
+            "id": "AUT",
+            "name": "Austria",
+            "continent": "Europe"
+        },
+        {
+            "id": "AZE",
+            "name": "Azerbaijan",
+            "continent": "Asia"
+        },
+        {
+            "id": "BHS",
+            "name": "Bahamas, The",
+            "continent": "America"
+        },
+        {
+            "id": "BHR",
+            "name": "Bahrain",
+            "continent": "Asia"
+        },
+        {
+            "id": "BGD",
+            "name": "Bangladesh",
+            "continent": "Asia"
+        },
+        {
+            "id": "BRB",
+            "name": "Barbados",
+            "continent": "America"
+        },
+        {
+            "id": "BLR",
+            "name": "Belarus",
+            "continent": "Europe"
+        },
+        {
+            "id": "BEL",
+            "name": "Belgium",
+            "continent": "Europe"
+        },
+        {
+            "id": "BLZ",
+            "name": "Belize",
+            "continent": "America"
+        },
+        {
+            "id": "BEN",
+            "name": "Benin",
+            "continent": "Africa"
+        },
+        {
+            "id": "BMU",
+            "name": "Bermuda",
+            "continent": "America"
+        },
+        {
+            "id": "BTN",
+            "name": "Bhutan",
+            "continent": "Asia"
+        },
+        {
+            "id": "BOL",
+            "name": "Bolivia",
+            "continent": "America"
+        },
+        {
+            "id": "BIH",
+            "name": "Bosnia and Herzegovina",
+            "continent": "Europe"
+        },
+        {
+            "id": "BWA",
+            "name": "Botswana",
+            "continent": "Africa"
+        },
+        {
+            "id": "BRA",
+            "name": "Brazil",
+            "continent": "America"
+        },
+        {
+            "id": "VGB",
+            "name": "British Virgin Islands",
+            "continent": "America"
+        },
+        {
+            "id": "BRN",
+            "name": "Brunei",
+            "continent": "Asia"
+        },
+        {
+            "id": "BGR",
+            "name": "Bulgaria",
+            "continent": "Europe"
+        },
+        {
+            "id": "BFA",
+            "name": "Burkina Faso",
+            "continent": "Africa"
+        },
+        {
+            "id": "BDI",
+            "name": "Burundi",
+            "continent": "Africa"
+        },
+        {
+            "id": "KHM",
+            "name": "Cambodia",
+            "continent": "Asia"
+        },
+        {
+            "id": "CMR",
+            "name": "Cameroon",
+            "continent": "Africa"
+        },
+        {
+            "id": "CAN",
+            "name": "Canada",
+            "continent": "America"
+        },
+        {
+            "id": "CPV",
+            "name": "Cape Verde",
+            "continent": "Africa"
+        },
+        {
+            "id": "CYM",
+            "name": "Cayman Islands",
+            "continent": "America"
+        },
+        {
+            "id": "CAF",
+            "name": "Central African Republic",
+            "continent": "Africa"
+        },
+        {
+            "id": "TCD",
+            "name": "Chad",
+            "continent": "Africa"
+        },
+        {
+            "id": "CHL",
+            "name": "Chile",
+            "continent": "America"
+        },
+        {
+            "id": "CHN",
+            "name": "China",
+            "continent": "Asia"
+        },
+        {
+            "id": "CXR",
+            "name": "Christmas Island",
+            "continent": "Asia"
+        },
+        {
+            "id": "CCK",
+            "name": "Cocos (Keeling) Islands",
+            "continent": "Asia"
+        },
+        {
+            "id": "COL",
+            "name": "Colombia",
+            "continent": "America"
+        },
+        {
+            "id": "COM",
+            "name": "Comoros",
+            "continent": "Africa"
+        },
+        {
+            "id": "COG",
+            "name": "Congo, Republic of the",
+            "continent": "Africa"
+        },
+        {
+            "id": "COK",
+            "name": "Cook Islands",
+            "continent": "Oceania"
+        },
+        {
+            "id": "CRI",
+            "name": "Costa Rica",
+            "continent": "America"
+        },
+        {
+            "id": "CIV",
+            "name": "Cote d'Ivoire",
+            "continent": "Africa"
+        },
+        {
+            "id": "HRV",
+            "name": "Croatia",
+            "continent": "Europe"
+        },
+        {
+            "id": "CUB",
+            "name": "Cuba",
+            "continent": "America"
+        },
+        {
+            "id": "CYP",
+            "name": "Cyprus",
+            "continent": "Asia"
+        },
+        {
+            "id": "CZE",
+            "name": "Czech Republic",
+            "continent": "Europe"
+        },
+        {
+            "id": "DNK",
+            "name": "Denmark",
+            "continent": "Europe"
+        },
+        {
+            "id": "DJI",
+            "name": "Djibouti",
+            "continent": "Africa"
+        },
+        {
+            "id": "DMA",
+            "name": "Dominica",
+            "continent": "America"
+        },
+        {
+            "id": "DOM",
+            "name": "Dominican Republic",
+            "continent": "America"
+        },
+        {
+            "id": "ECU",
+            "name": "Ecuador",
+            "continent": "America"
+        },
+        {
+            "id": "EGY",
+            "name": "Egypt",
+            "continent": "Africa"
+        },
+        {
+            "id": "SLV",
+            "name": "El Salvador",
+            "continent": "America"
+        },
+        {
+            "id": "GNQ",
+            "name": "Equatorial Guinea",
+            "continent": "Africa"
+        },
+        {
+            "id": "ERI",
+            "name": "Eritrea",
+            "continent": "Africa"
+        },
+        {
+            "id": "EST",
+            "name": "Estonia",
+            "continent": "Europe"
+        },
+        {
+            "id": "ETH",
+            "name": "Ethiopia",
+            "continent": "Africa"
+        },
+        {
+            "id": "FLK",
+            "name": "Falkland Islands (Islas Malvinas)",
+            "continent": "America"
+        },
+        {
+            "id": "FRO",
+            "name": "Faroe Islands",
+            "continent": "Europe"
+        },
+        {
+            "id": "FJI",
+            "name": "Fiji",
+            "continent": "Oceania"
+        },
+        {
+            "id": "FIN",
+            "name": "Finland",
+            "continent": "Europe"
+        },
+        {
+            "id": "FRA",
+            "name": "France",
+            "continent": "Europe"
+        },
+        {
+            "id": "GUF",
+            "name": "French Guiana",
+            "continent": "America"
+        },
+        {
+            "id": "PYF",
+            "name": "French Polynesia",
+            "continent": "Oceania"
+        },
+        {
+            "id": "GAB",
+            "name": "Gabon",
+            "continent": "Africa"
+        },
+        {
+            "id": "GMB",
+            "name": "Gambia, The",
+            "continent": "Africa"
+        },
+        {
+            "id": "GEO",
+            "name": "Georgia",
+            "continent": "Asia"
+        },
+        {
+            "id": "DEU",
+            "name": "Germany",
+            "continent": "Europe"
+        },
+        {
+            "id": "GHA",
+            "name": "Ghana",
+            "continent": "Africa"
+        },
+        {
+            "id": "GIB",
+            "name": "Gibraltar",
+            "continent": "Europe"
+        },
+        {
+            "id": "GRC",
+            "name": "Greece",
+            "continent": "Europe"
+        },
+        {
+            "id": "GRL",
+            "name": "Greenland",
+            "continent": "America"
+        },
+        {
+            "id": "GRD",
+            "name": "Grenada",
+            "continent": "America"
+        },
+        {
+            "id": "GLP",
+            "name": "Guadeloupe",
+            "continent": "America"
+        },
+        {
+            "id": "GUM",
+            "name": "Guam",
+            "continent": "Oceania"
+        },
+        {
+            "id": "GTM",
+            "name": "Guatemala",
+            "continent": "America"
+        },
+        {
+            "id": "GIN",
+            "name": "Guinea",
+            "continent": "Africa"
+        },
+        {
+            "id": "GNB",
+            "name": "Guinea-Bissau",
+            "continent": "Africa"
+        },
+        {
+            "id": "GUY",
+            "name": "Guyana",
+            "continent": "America"
+        },
+        {
+            "id": "HTI",
+            "name": "Haiti",
+            "continent": "America"
+        },
+        {
+            "id": "VAT",
+            "name": "Holy See (Vatican City)",
+            "continent": "Europe"
+        },
+        {
+            "id": "HND",
+            "name": "Honduras",
+            "continent": "America"
+        },
+        {
+            "id": "HUN",
+            "name": "Hungary",
+            "continent": "Europe"
+        },
+        {
+            "id": "ISL",
+            "name": "Iceland",
+            "continent": "Europe"
+        },
+        {
+            "id": "IND",
+            "name": "India",
+            "continent": "Asia"
+        },
+        {
+            "id": "IDN",
+            "name": "Indonesia",
+            "continent": "Asia"
+        },
+        {
+            "id": "IRN",
+            "name": "Iran",
+            "continent": "Asia"
+        },
+        {
+            "id": "IRQ",
+            "name": "Iraq",
+            "continent": "Asia"
+        },
+        {
+            "id": "IRL",
+            "name": "Ireland",
+            "continent": "Europe"
+        },
+        {
+            "id": "ISR",
+            "name": "Israel",
+            "continent": "Asia"
+        },
+        {
+            "id": "ITA",
+            "name": "Italy",
+            "continent": "Europe"
+        },
+        {
+            "id": "JAM",
+            "name": "Jamaica",
+            "continent": "America"
+        },
+        {
+            "id": "JPN",
+            "name": "Japan",
+            "continent": "Asia"
+        },
+        {
+            "id": "JOR",
+            "name": "Jordan",
+            "continent": "Asia"
+        },
+        {
+            "id": "KAZ",
+            "name": "Kazakhstan",
+            "continent": "Asia"
+        },
+        {
+            "id": "KEN",
+            "name": "Kenya",
+            "continent": "Africa"
+        },
+        {
+            "id": "KIR",
+            "name": "Kiribati",
+            "continent": "Oceania"
+        },
+        {
+            "id": "PRK",
+            "name": "Korea, North",
+            "continent": "Asia"
+        },
+        {
+            "id": "KOR",
+            "name": "Korea, South",
+            "continent": "Asia"
+        },
+        {
+            "id": "KWT",
+            "name": "Kuwait",
+            "continent": "Asia"
+        },
+        {
+            "id": "KGZ",
+            "name": "Kyrgyzstan",
+            "continent": "Asia"
+        },
+        {
+            "id": "LAO",
+            "name": "Laos",
+            "continent": "Asia"
+        },
+        {
+            "id": "LVA",
+            "name": "Latvia",
+            "continent": "Europe"
+        },
+        {
+            "id": "LBN",
+            "name": "Lebanon",
+            "continent": "Asia"
+        },
+        {
+            "id": "LSO",
+            "name": "Lesotho",
+            "continent": "Africa"
+        },
+        {
+            "id": "LBR",
+            "name": "Liberia",
+            "continent": "Africa"
+        },
+        {
+            "id": "LBY",
+            "name": "Libya",
+            "continent": "Africa"
+        },
+        {
+            "id": "LIE",
+            "name": "Liechtenstein",
+            "continent": "Europe"
+        },
+        {
+            "id": "LTU",
+            "name": "Lithuania",
+            "continent": "Europe"
+        },
+        {
+            "id": "LUX",
+            "name": "Luxembourg",
+            "continent": "Europe"
+        },
+        {
+            "id": "MKD",
+            "name": "Macedonia",
+            "continent": "Europe"
+        },
+        {
+            "id": "MDG",
+            "name": "Madagascar",
+            "continent": "Africa"
+        },
+        {
+            "id": "MWI",
+            "name": "Malawi",
+            "continent": "Africa"
+        },
+        {
+            "id": "MYS",
+            "name": "Malaysia",
+            "continent": "Asia"
+        },
+        {
+            "id": "MDV",
+            "name": "Maldives",
+            "continent": "Asia"
+        },
+        {
+            "id": "MLI",
+            "name": "Mali",
+            "continent": "Africa"
+        },
+        {
+            "id": "MLT",
+            "name": "Malta",
+            "continent": "Europe"
+        },
+        {
+            "id": "MHL",
+            "name": "Marshall Islands",
+            "continent": "Oceania"
+        },
+        {
+            "id": "MTQ",
+            "name": "Martinique",
+            "continent": "America"
+        },
+        {
+            "id": "MRT",
+            "name": "Mauritania",
+            "continent": "Africa"
+        },
+        {
+            "id": "MUS",
+            "name": "Mauritius",
+            "continent": "Africa"
+        },
+        {
+            "id": "MYT",
+            "name": "Mayotte",
+            "continent": "Africa"
+        },
+        {
+            "id": "MEX",
+            "name": "Mexico",
+            "continent": "America"
+        },
+        {
+            "id": "FSM",
+            "name": "Micronesia, Federated States of",
+            "continent": "Oceania"
+        },
+        {
+            "id": "MDA",
+            "name": "Moldova",
+            "continent": "Europe"
+        },
+        {
+            "id": "MCO",
+            "name": "Monaco",
+            "continent": "Europe"
+        },
+        {
+            "id": "MNG",
+            "name": "Mongolia",
+            "continent": "Asia"
+        },
+        {
+            "id": "MSR",
+            "name": "Montserrat",
+            "continent": "America"
+        },
+        {
+            "id": "MAR",
+            "name": "Morocco",
+            "continent": "Africa"
+        },
+        {
+            "id": "MOZ",
+            "name": "Mozambique",
+            "continent": "Africa"
+        },
+        {
+            "id": "MMR",
+            "name": "Myanmar (Burma)",
+            "continent": "Asia"
+        },
+        {
+            "id": "NAM",
+            "name": "Namibia",
+            "continent": "Africa"
+        },
+        {
+            "id": "NRU",
+            "name": "Nauru",
+            "continent": "Oceania"
+        },
+        {
+            "id": "NPL",
+            "name": "Nepal",
+            "continent": "Asia"
+        },
+        {
+            "id": "NLD",
+            "name": "Netherlands",
+            "continent": "Europe"
+        },
+        {
+            "id": "ANT",
+            "name": "Netherlands Antilles",
+            "continent": "America"
+        },
+        {
+            "id": "NCL",
+            "name": "New Caledonia",
+            "continent": "Oceania"
+        },
+        {
+            "id": "NZL",
+            "name": "New Zealand",
+            "continent": "Oceania"
+        },
+        {
+            "id": "NIC",
+            "name": "Nicaragua",
+            "continent": "America"
+        },
+        {
+            "id": "NER",
+            "name": "Niger",
+            "continent": "Africa"
+        },
+        {
+            "id": "NGA",
+            "name": "Nigeria",
+            "continent": "Africa"
+        },
+        {
+            "id": "NIU",
+            "name": "Niue",
+            "continent": "Oceania"
+        },
+        {
+            "id": "NFK",
+            "name": "Norfolk Island",
+            "continent": "Oceania"
+        },
+        {
+            "id": "MNP",
+            "name": "Northern Mariana Islands",
+            "continent": "Oceania"
+        },
+        {
+            "id": "NOR",
+            "name": "Norway",
+            "continent": "Europe"
+        },
+        {
+            "id": "OMN",
+            "name": "Oman",
+            "continent": "Asia"
+        },
+        {
+            "id": "PAK",
+            "name": "Pakistan",
+            "continent": "Asia"
+        },
+        {
+            "id": "PLW",
+            "name": "Palau",
+            "continent": "Oceania"
+        },
+        {
+            "id": "PAN",
+            "name": "Panama",
+            "continent": "America"
+        },
+        {
+            "id": "PNG",
+            "name": "Papua New Guinea",
+            "continent": "Oceania"
+        },
+        {
+            "id": "PRY",
+            "name": "Paraguay",
+            "continent": "America"
+        },
+        {
+            "id": "PER",
+            "name": "Peru",
+            "continent": "America"
+        },
+        {
+            "id": "PHL",
+            "name": "Philippines",
+            "continent": "Asia"
+        },
+        {
+            "id": "PCN",
+            "name": "Pitcairn Islands",
+            "continent": "Oceania"
+        },
+        {
+            "id": "POL",
+            "name": "Poland",
+            "continent": "Europe"
+        },
+        {
+            "id": "PRT",
+            "name": "Portugal",
+            "continent": "Europe"
+        },
+        {
+            "id": "PRI",
+            "name": "Puerto Rico",
+            "continent": "America"
+        },
+        {
+            "id": "QAT",
+            "name": "Qatar",
+            "continent": "Asia"
+        },
+        {
+            "id": "REU",
+            "name": "Reunion",
+            "continent": "Africa"
+        },
+        {
+            "id": "ROM",
+            "name": "Romania",
+            "continent": "Europe"
+        },
+        {
+            "id": "RUS",
+            "name": "Russia",
+            "continent": "Asia"
+        },
+        {
+            "id": "RWA",
+            "name": "Rwanda",
+            "continent": "Africa"
+        },
+        {
+            "id": "KNA",
+            "name": "Saint Kitts and Nevis",
+            "continent": "America"
+        },
+        {
+            "id": "LCA",
+            "name": "Saint Lucia",
+            "continent": "America"
+        },
+        {
+            "id": "SPM",
+            "name": "Saint Pierre and Miquelon",
+            "continent": "America"
+        },
+        {
+            "id": "VCT",
+            "name": "Saint Vincent and the Grenadines",
+            "continent": "America"
+        },
+        {
+            "id": "SMR",
+            "name": "San Marino",
+            "continent": "Europe"
+        },
+        {
+            "id": "STP",
+            "name": "Sao Tome and Principe",
+            "continent": "Africa"
+        },
+        {
+            "id": "SAU",
+            "name": "Saudi Arabia",
+            "continent": "Asia"
+        },
+        {
+            "id": "SEN",
+            "name": "Senegal",
+            "continent": "Africa"
+        },
+        {
+            "id": "SYC",
+            "name": "Seychelles",
+            "continent": "Africa"
+        },
+        {
+            "id": "SLE",
+            "name": "Sierra Leone",
+            "continent": "Africa"
+        },
+        {
+            "id": "SGP",
+            "name": "Singapore",
+            "continent": "Asia"
+        },
+        {
+            "id": "SVK",
+            "name": "Slovakia",
+            "continent": "Europe"
+        },
+        {
+            "id": "SVN",
+            "name": "Slovenia",
+            "continent": "Europe"
+        },
+        {
+            "id": "SLB",
+            "name": "Solomon Islands",
+            "continent": "Oceania"
+        },
+        {
+            "id": "SOM",
+            "name": "Somalia",
+            "continent": "Africa"
+        },
+        {
+            "id": "ZAF",
+            "name": "South Africa",
+            "continent": "Africa"
+        },
+        {
+            "id": "ESP",
+            "name": "Spain",
+            "continent": "Europe"
+        },
+        {
+            "id": "LKA",
+            "name": "Sri Lanka",
+            "continent": "Asia"
+        },
+        {
+            "id": "SDN",
+            "name": "Sudan",
+            "continent": "Africa"
+        },
+        {
+            "id": "SUR",
+            "name": "Suriname",
+            "continent": "America"
+        },
+        {
+            "id": "SJM",
+            "name": "Svalbard",
+            "continent": "Europe"
+        },
+        {
+            "id": "SWZ",
+            "name": "Swaziland",
+            "continent": "Africa"
+        },
+        {
+            "id": "SWE",
+            "name": "Sweden",
+            "continent": "Europe"
+        },
+        {
+            "id": "CHE",
+            "name": "Switzerland",
+            "continent": "Europe"
+        },
+        {
+            "id": "SYR",
+            "name": "Syria",
+            "continent": "Asia"
+        },
+        {
+            "id": "TWN",
+            "name": "Taiwan",
+            "continent": "Asia"
+        },
+        {
+            "id": "TJK",
+            "name": "Tajikistan",
+            "continent": "Asia"
+        },
+        {
+            "id": "TZA",
+            "name": "Tanzania",
+            "continent": "Africa"
+        },
+        {
+            "id": "THA",
+            "name": "Thailand",
+            "continent": "Asia"
+        },
+        {
+            "id": "TGO",
+            "name": "Togo",
+            "continent": "Africa"
+        },
+        {
+            "id": "TKL",
+            "name": "Tokelau",
+            "continent": "Oceania"
+        },
+        {
+            "id": "TON",
+            "name": "Tonga",
+            "continent": "Oceania"
+        },
+        {
+            "id": "TTO",
+            "name": "Trinidad and Tobago",
+            "continent": "America"
+        },
+        {
+            "id": "TUN",
+            "name": "Tunisia",
+            "continent": "Africa"
+        },
+        {
+            "id": "TUR",
+            "name": "Turkey",
+            "continent": "Asia"
+        },
+        {
+            "id": "TKM",
+            "name": "Turkmenistan",
+            "continent": "Asia"
+        },
+        {
+            "id": "TCA",
+            "name": "Turks and Caicos Islands",
+            "continent": "America"
+        },
+        {
+            "id": "TUV",
+            "name": "Tuvalu",
+            "continent": "Oceania"
+        },
+        {
+            "id": "UGA",
+            "name": "Uganda",
+            "continent": "Africa"
+        },
+        {
+            "id": "UKR",
+            "name": "Ukraine",
+            "continent": "Europe"
+        },
+        {
+            "id": "ARE",
+            "name": "United Arab Emirates",
+            "continent": "Asia"
+        },
+        {
+            "id": "GBR",
+            "name": "United Kingdom",
+            "continent": "Europe"
+        },
+        {
+            "id": "USA",
+            "name": "United States",
+            "continent": "America"
+        },
+        {
+            "id": "URY",
+            "name": "Uruguay",
+            "continent": "America"
+        },
+        {
+            "id": "UZB",
+            "name": "Uzbekistan",
+            "continent": "Asia"
+        },
+        {
+            "id": "VUT",
+            "name": "Vanuatu",
+            "continent": "Oceania"
+        },
+        {
+            "id": "VEN",
+            "name": "Venezuela",
+            "continent": "America"
+        },
+        {
+            "id": "VNM",
+            "name": "Vietnam",
+            "continent": "Asia"
+        },
+        {
+            "id": "VIR",
+            "name": "Virgin Islands",
+            "continent": "America"
+        },
+        {
+            "id": "WLF",
+            "name": "Wallis and Futuna",
+            "continent": "Oceania"
+        },
+        {
+            "id": "ESH",
+            "name": "Western Sahara",
+            "continent": "Africa"
+        },
+        {
+            "id": "WSM",
+            "name": "Western Samoa",
+            "continent": "Oceania"
+        },
+        {
+            "id": "YEM",
+            "name": "Yemen",
+            "continent": "Asia"
+        },
+        {
+            "id": "ZAR",
+            "name": "Zaire (Dem Rep of Congo)",
+            "continent": "Africa"
+        },
+        {
+            "id": "ZWB",
+            "name": "Zambia",
+            "continent": "Africa"
+        },
+        {
+            "id": "ZWE",
+            "name": "Zimbabwe",
+            "continent": "Africa"
+        }
+    ]
+}

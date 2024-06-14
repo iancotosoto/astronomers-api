@@ -33,7 +33,7 @@ services:
     networks:
       - web
     volumes:
-      - ./db_scripts/:/docker-entrypoint-initdb.d/
+      - ./database_scripts/:/docker-entrypoint-initdb.d/
 
   cache:
     image: redis:6-alpine

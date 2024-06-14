@@ -1,5 +1,5 @@
 import redis
-from config import Config
+from app.config import Config
 
 def get_cache_connection():
     try:
