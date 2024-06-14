@@ -1,4 +1,4 @@
-import app.utils.response as resp
+import app.endpoints.utils.response as resp
 
 import cache.country_cache as country_cache
 import database.country_db as country_db

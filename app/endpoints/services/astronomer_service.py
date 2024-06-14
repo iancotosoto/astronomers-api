@@ -1,4 +1,4 @@
-import app.utils.response as resp
+import app.endpoints.utils.response as resp
 
 import cache.astronomer_cache as astronomer_cache
 import database.astronomer_db as astronomer_db

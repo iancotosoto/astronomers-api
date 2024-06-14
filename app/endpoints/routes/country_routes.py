@@ -1,6 +1,6 @@
 from flask import Blueprint
 
-import app.services.country_service as country_service
+import app.endpoints.services.country_service as country_service
 
 # Variable to hold the blueprint object
 country_routes = Blueprint('country_routes', __name__)
