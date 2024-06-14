@@ -1,6 +1,6 @@
 import app.models.astronomer as Astronomer
 
-import db.db as db
+import database.db as db
 
 conn = db.get_db_connection()
 

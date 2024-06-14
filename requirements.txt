@@ -3,3 +3,5 @@ python-dotenv
 psycopg2
 redis
 pytest
+beautifulsoup4
+requests

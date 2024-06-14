@@ -41,6 +41,7 @@ class Astronomer:
     def set_countries(self, countries:list):
         self.countries = countries
 
+    # Make a dictionary from the object
     def to_dict(self):
         return {
             "id": self.id,

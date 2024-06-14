@@ -11,6 +11,9 @@ ENV CACHE_PORT=6379
 ENV CACHE_DB=0
 ENV CACHE_DECODE_RESPONSES=True
 
+ENV COUNTRIES_SOURCE="https://cloford.com/resources/codes/index.htm"
+ENV ASTRONOMERS_SOURCE="https://en.wikipedia.org/wiki/List_of_astronomers"
+
 WORKDIR /opt/app
 
 COPY . .

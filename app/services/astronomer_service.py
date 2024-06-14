@@ -1,9 +1,7 @@
-import app.models.astronomer as Astronomer
-
 import app.utils.response as resp
 
 import cache.astronomer_cache as astronomer_cache
-import db.astronomer_db as astronomer_db
+import database.astronomer_db as astronomer_db
 
 def get_astronomers():
     """
