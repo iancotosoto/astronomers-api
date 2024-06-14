@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: autorized_user
+      DB_PASSWORD: 7Ty3m109krJE3O3U
+      DB_NAME: astronomy_db
+      CACHE_HOST: cache
+      CACHE_PORT: 6379
+      CACHE_DB: 0
+      CACHE_DECODE_RESPONSES: True
+    ports:
+      - 5000:5000
+    networks:
+      - web
+    depends_on:
+      - db
+      - cache
+    volumes:
+      - .:/opt/app
+    command: ./start.sh
+
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: autorized_user
+      POSTGRES_PASSWORD: 7Ty3m109krJE3O3U
+      POSTGRES_DB: astronomy_db
+    networks:
+      - web
+    volumes:
+      - ./db_scripts/:/docker-entrypoint-initdb.d/
+
+  cache:
+    image: redis:6-alpine
+    ports:
+      - 6379:6379
+    networks:
+      - web
+
+networks:
+  web:
+    driver: bridge
