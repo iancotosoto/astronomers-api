@@ -7,10 +7,10 @@ AS $$
 DECLARE
     rec RECORD;
     astronomer_id INTEGER;
-    astronomer_name TEXT;
+    astronomer_name VARCHAR(100);
     birth_year INTEGER;
     death_year INTEGER;
-    country_list TEXT;
+    country_list VARCHAR(100);
 BEGIN
     FOR rec IN
         SELECT A.id, A.name, A.birth_year, A.death_year, string_agg(C.name, ', ' ORDER BY C.name) AS countries
@@ -35,7 +35,7 @@ $$;
 -- Get ids
 -- Procedure to get Astronomer ID by name
 CREATE OR REPLACE PROCEDURE get_astronomer_id(
-    IN p_astronomer_name TEXT,
+    IN p_astronomer_name VARCHAR(100),
     OUT p_astronomer_id INTEGER
 )
 LANGUAGE plpgsql
@@ -55,7 +55,7 @@ $$;
 -- Inserts
 -- Procedure to insert into Astronomer
 CREATE OR REPLACE PROCEDURE insert_astronomer(
-    IN p_astronomer_name TEXT,
+    IN p_astronomer_name VARCHAR(100),
     IN p_birth_year INTEGER,
     IN p_death_year INTEGER
 )
@@ -70,22 +70,19 @@ BEGIN
 
     -- Insert the astronomer
     INSERT INTO Astronomer (name, birth_year, death_year) VALUES (p_astronomer_name, p_birth_year, p_death_year);
-
-    -- Commit the transaction
-    COMMIT;
 END;
 $$;
 
 -- Procedure to insert into Astronomer_Country with ID validation
 CREATE OR REPLACE PROCEDURE insert_astronomer_country(
-    IN p_astronomer_name TEXT,
-    IN p_country_name TEXT
+    IN p_astronomer_name VARCHAR(100),
+    IN p_country_name VARCHAR(100)
 )
 LANGUAGE plpgsql
 AS $$
 DECLARE
     v_astronomer_id INTEGER;
-    v_country_id TEXT;
+    v_country_id VARCHAR(3);
 BEGIN
     -- Get Astronomer ID
     CALL get_astronomer_id(p_astronomer_name, v_astronomer_id);
@@ -101,8 +98,16 @@ BEGIN
 
     -- Insert the Astronomer-Country relationship
     INSERT INTO Astronomer_Country (astronomer_id, country_id) VALUES (v_astronomer_id, v_country_id);
+END;
+$$;
 
-    -- Commit the transaction
-    COMMIT;
+CREATE OR REPLACE PROCEDURE get_astronomers_count(
+    OUT p_astronomer_count INTEGER
+)
+LANGUAGE plpgsql
+AS $$
+BEGIN
+    -- Perform the query to count the number of astronomers
+    SELECT COUNT(*) INTO p_astronomer_count FROM Astronomer;
 END;
 $$;
