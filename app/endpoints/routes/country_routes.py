@@ -6,7 +6,8 @@ import app.endpoints.services.country_service as country_service
 country_routes = Blueprint('country_routes', __name__)
 
 # Routes
-@country_routes.route('/countries/post', methods=['GET']) # Change endpoint and method
+# All countries
+@country_routes.route('/countries', methods=['POST'])
 def post_countries():
     """
     Post all countries

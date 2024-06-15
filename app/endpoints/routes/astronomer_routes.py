@@ -1,15 +1,18 @@
 from flask import Blueprint
 
 import app.endpoints.services.astronomer_service as astronomer_service
-import data.webscrapping.astronomers as astronomer # Delete this line
 
-# Variable to hold the blueprint object
+# Variable
 astronomer_routes = Blueprint('astronomer_routes', __name__)
 
 # Routes
-@astronomer_routes.route('/test', methods=['GET'])
-def test():
-    return str(countries.get_countries())
+# All astronomers
+@astronomer_routes.route('/astronomers', methods=['POST'])
+def post_astronomer():
+    """
+    Post all countries
+    """
+    return astronomer_service.post_astronomers()
 
 @astronomer_routes.route('/astronomers', methods=['GET'])
 def get_astronomers():
