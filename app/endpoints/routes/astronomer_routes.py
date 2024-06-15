@@ -1,4 +1,4 @@
-from flask import Blueprint
+from flask import Blueprint, request
 
 import app.endpoints.services.astronomer_service as astronomer_service
 
@@ -19,4 +19,8 @@ def get_astronomers():
     """
     Get all astronomers
     """
-    return astronomer_service.get_astronomers()
+    # Get query parameters
+    page = request.args.get('page', default=1, type=int)
+    limit = request.args.get('limit', default=10, type=int)
+
+    return astronomer_service.get_astronomers(page, limit)

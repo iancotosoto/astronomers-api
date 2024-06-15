@@ -27,17 +27,23 @@ def transform_countries(countries):
         transformed_countries.append(transformed_country.to_dict())
     return transformed_countries
 
-def get_countries():
+def get_countries(offset, limit):
+    """
+    Get paginated countries from the database
+    """
     try:
         cur = conn.cursor()
-        cur.execute("SELECT C.id, C.name, CT.name FROM Country AS C\
-                    INNER JOIN Continent AS CT ON C.id_continent = CT.id") # NEED TO BE A PROCEDURE
+        cur.execute(f"""
+        SELECT C.id, C.name, CT.name FROM Country AS C
+        INNER JOIN Continent AS CT ON C.id_continent = CT.id
+        LIMIT {limit} OFFSET {offset}
+        """)
         countries = cur.fetchall()
         countries = transform_countries(countries)
         cur.close()
         return countries
     except Exception as e:
-        print(f"Error getting astronomers: {e}")
+        print(f"Error getting countries: {e}")
         raise e
     
 def get_countries_count():

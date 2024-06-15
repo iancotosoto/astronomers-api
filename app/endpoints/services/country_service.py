@@ -26,26 +26,29 @@ def post_countries():
     except Exception as e:
         return resp.generate_response("error", f"Error uploading countries: {e}", None, 500)
 
-def get_countries():
+def get_countries(page, limit):
     """
     Get all countries
     """
     try:
+        # Calculate offset
+        offset = (page - 1) * limit
+
         # Get countries from cache
-        countries = country_cache.get_countries()
+        countries = country_cache.get_countries(offset, limit)
         
         if countries:
             # If countries is not None, return countries from cache
             return resp.generate_response("success", "Countries retrieved successfully from cache", countries, 200)
         
         # If countries is None, get countries from db
-        countries = country_db.get_countries()
+        countries = country_db.get_countries(offset, limit)
 
         if not countries: # Countries is an empty list
             return resp.generate_response("success", "No countries found in database", None, 200)
         
         # Set countries in cache
-        country_cache.set_countries(countries)
+        country_cache.set_countries(countries, offset, limit)
         
         # Return countries from db with success message
         return resp.generate_response("success", "Countries retrieved successfully from db", countries, 200)

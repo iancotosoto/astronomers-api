@@ -1,4 +1,4 @@
-from flask import Blueprint
+from flask import Blueprint, request
 
 import app.endpoints.services.country_service as country_service
 
@@ -19,4 +19,8 @@ def get_countries():
     """
     Get all countries
     """
-    return country_service.get_countries()
+
+    page = request.args.get('page', default=1, type=int)
+    limit = request.args.get('limit', default=10, type=int)
+
+    return country_service.get_countries(page, limit)

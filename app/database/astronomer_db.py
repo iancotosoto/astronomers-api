@@ -54,17 +54,23 @@ def upload_astronomers():
         raise e
 
 # Get astronomers
-def get_astronomers():
+def get_astronomers(offset, limit):
+    """
+    Get paginated astronomers from the database
+    """
     try:
         cur = conn.cursor()
-        cur.execute("SELECT A.id, A.name, A.birth_year, A.death_year, string_agg(C.name, ', ' ORDER BY C.name) AS countries\
-        FROM Astronomer A\
-        LEFT JOIN Astronomer_Country AC ON A.id = AC.astronomer_id\
-        LEFT JOIN Country C ON AC.country_id = C.id\
-        GROUP BY A.id, A.name, A.birth_year, A.death_year\
-        ORDER BY A.name") # NEED TO BE A PROCEDURE
+        cur.execute(f"""
+        SELECT A.id, A.name, A.birth_year, A.death_year, string_agg(C.name, ', ' ORDER BY C.name) AS countries
+        FROM Astronomer A
+        LEFT JOIN Astronomer_Country AC ON A.id = AC.astronomer_id
+        LEFT JOIN Country C ON AC.country_id = C.id
+        GROUP BY A.id, A.name, A.birth_year, A.death_year
+        ORDER BY A.id
+        LIMIT {limit} OFFSET {offset}
+        """)
         astronomers = cur.fetchall()
-        astronomers = transform_astronomers(astronomers)
+        astronomers = transform_astronomers(astronomers)    
         cur.close()
         return astronomers
     except Exception as e:

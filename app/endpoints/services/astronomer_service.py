@@ -26,26 +26,29 @@ def post_astronomers():
     except Exception as e:
         return resp.generate_response("error", f"Error uploading astronomers: {e}", None, 500)
 
-def get_astronomers():
+def get_astronomers(page=1, limit=10):
     """
-    Get all astronomers
+    Get paginated astronomers
     """
     try:
-        # Get astronomers from cache
-        astronomers = astronomer_cache.get_astronomers()
+        # Calculate offset
+        offset = (page - 1) * limit
+
+        # Get paginated astronomers from cache
+        astronomers = astronomer_cache.get_astronomers(offset, limit)
         
         if astronomers: 
             # If astronomers is not None, return astronomers from cache
             return resp.generate_response("success", "Astronomers retrieved successfully from cache", astronomers, 200)
         
-        # If astronomers is None, get astronomers from db
-        astronomers = astronomer_db.get_astronomers()
+        # If astronomers is None, get paginated astronomers from db
+        astronomers = astronomer_db.get_astronomers(offset, limit)
 
         if not astronomers: # Astronomers is an empty list
             return resp.generate_response("success", "No astronomers found in database", None, 200)
         
         # Set astronomers in cache
-        astronomer_cache.set_astronomers(astronomers)
+        astronomer_cache.set_astronomers(astronomers, offset, limit)
         
         # Return astronomers from db with success message
         return resp.generate_response("success", "Astronomers retrieved successfully from db", astronomers, 200)

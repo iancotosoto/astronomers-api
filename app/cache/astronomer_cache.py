@@ -7,33 +7,34 @@ conn = cache.get_cache_connection()
 
 # Functions
 # All astronomers
-def set_astronomers(astronomers):
+def get_astronomers(offset, limit):
     """
-    Set astronomers in the cache
+    Get paginated astronomers from the cache
     """
     try:
-        astronomers = json.dumps(astronomers) # Convert the astronomers to a JSON string
-        conn.setex('astronomers', 3600, astronomers) # Set the key 'astronomers' with the value of the astronomers
-    except Exception as e: # Handle exceptions
-        print(f"Error setting astronomers in cache: {e}")
-        raise e
+        astronomers = conn.get(f'astronomers_{offset}_{limit}')
+        return json.loads(astronomers) if astronomers else None
+    except Exception as e:
+        print(f"Error getting astronomers from cache: {e}")
+        return None
 
-def get_astronomers():
+def set_astronomers(astronomers, offset, limit):
     """
-    Get all astronomers from the cache
+    Set paginated astronomers in the cache
     """
     try:
-        astronomers = conn.get('astronomers') # If the key does not exist, it will return None
-        return json.loads(astronomers) if astronomers else None # Decode the bytes to string
-    except Exception as e: # Handle exceptions
-        pass
+        conn.set(f'astronomers_{offset}_{limit}', json.dumps(astronomers) if astronomers else None)
+    except Exception as e:
+        print(f"Error setting astronomers in cache: {e}")
 
 def delete_astronomers():
     """
     Delete all astronomers from the cache
     """
     try:
-        conn.delete('astronomers') # Delete the key 'astronomers'
-    except Exception as e: # Handle exceptions
+        keys = conn.keys('astronomers_*')
+        for key in keys:
+            conn.delete(key)
+    except Exception as e: 
         print(f"Error deleting astronomers from cache: {e}")
         raise e

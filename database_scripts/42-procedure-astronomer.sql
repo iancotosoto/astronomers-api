@@ -1,7 +1,7 @@
 \connect astronomy_db;
 
 -- Get all astronomers
-CREATE OR REPLACE PROCEDURE get_astronomers() -- NEED TO BE FIXED
+CREATE OR REPLACE PROCEDURE get_astronomers()
 LANGUAGE plpgsql
 AS $$
 DECLARE
