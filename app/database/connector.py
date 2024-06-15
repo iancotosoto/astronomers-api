@@ -1,6 +1,8 @@
 import psycopg2
-from app.config import Config
 
+from app.config.config import Config
+
+#
 def get_db_connection():
     try:
         conn = psycopg2.connect(

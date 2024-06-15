@@ -1,7 +1,12 @@
 import redis
-from app.config import Config
 
+from app.config.config import Config
+
+# Functions
 def get_cache_connection():
+    """
+    Get cache connection
+    """
     try:
         conn = redis.Redis(
             host=Config.CACHE_HOST, 
