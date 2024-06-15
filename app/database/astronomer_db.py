@@ -83,3 +83,19 @@ def get_astronomers_count():
     except Exception as e:
         print(f"Error performing query to check astronomers: {e}")
         return 0
+
+# Get astronomers by country
+def get_astronomers_by_country(country_name:str, offset:int, limit:int):
+    try:
+        cur = conn.cursor()
+
+        # Call the user-defined function to get paginated astronomers
+        cur.execute("SELECT id, name, birth_year, death_year, countries \
+                    FROM get_astronomers_by_country(%s, %s, %s)", (country_name, offset, limit))
+        astronomers = cur.fetchall()
+        cur.close()
+        t_astronomers = transform_astronomers(astronomers)
+        return t_astronomers
+    except Exception as e:
+        print(f"Error getting astronomers: {e}")
+        raise e

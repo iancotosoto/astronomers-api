@@ -24,3 +24,15 @@ def get_astronomers():
     limit = request.args.get('limit', default=10, type=int)
 
     return astronomer_service.get_astronomers(page, limit)
+
+# Astronomers by country
+@astronomer_routes.route('/astronomers/<country_name>', methods=['GET'])
+def get_astronomers_by_country(country_name):
+    """
+    Get astronomers by country
+    """
+    # Get query parameters
+    page = request.args.get('page', default=1, type=int)
+    limit = request.args.get('limit', default=10, type=int)
+
+    return astronomer_service.get_astronomers_by_country(country_name)

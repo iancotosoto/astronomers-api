@@ -45,7 +45,7 @@ def get_astronomers(page=1, limit=10):
         astronomers = astronomer_db.get_astronomers(offset, limit)
 
         if not astronomers: # Astronomers is an empty list
-            return resp.generate_response("success", "No astronomers found in database", None, 200)
+            return resp.generate_response("error", "No astronomers found in database", None, 404)
         
         # Set astronomers in cache
         astronomer_cache.set_astronomers(astronomers, offset, limit)
@@ -56,4 +56,32 @@ def get_astronomers(page=1, limit=10):
     except Exception as e:
         # Return error response if any exception occurs
         return resp.generate_response("error", f"Error retrieving astronomers: {e}", None, 500)
+
+# Astronomers by country
+def get_astronomers_by_country(country_name, offset=0, limit=10):
+    """
+    Get astronomers by country
+    """
+    try:
+        # Get astronomers by country from cache
+        astronomers = astronomer_cache.get_astronomers_by_country(country_name, offset, limit)
+        
+        if astronomers:
+            # If astronomers is not None, return astronomers by country from cache
+            return resp.generate_response("success", f"Astronomers retrieved successfully by country {country_name} from cache", astronomers, 200)
+        
+        # If astronomers is None, get astronomers by country from db
+        astronomers = astronomer_db.get_astronomers_by_country(country_name, offset, limit)
+
+        if not astronomers: # Astronomers is an empty list
+            return resp.generate_response("error", f"No astronomers found by country {country_name} in database", None, 404)
+        
+        # Set astronomers by country in cache
+        astronomer_cache.set_astronomers_by_country(country_name, astronomers, offset, limit)
+        
+        # Return astronomers by country from db with success message
+        return resp.generate_response("success", f"Astronomers retrieved successfully by country {country_name} from db", astronomers, 200)
     
+    except Exception as e:
+        # Return error response if any exception occurs
+        return resp.generate_response("error", f"Error retrieving astronomers by country: {e}", None, 500)

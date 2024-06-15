@@ -26,3 +26,31 @@ BEGIN
     LIMIT p_limit OFFSET p_offset;
 END;
 $$;
+
+-- Function to get astronomers by country
+CREATE OR REPLACE FUNCTION get_astronomers_by_country(
+    p_country_name VARCHAR(100),
+    p_offset INTEGER,
+    p_limit INTEGER
+)
+RETURNS TABLE (
+    id INTEGER,
+    name VARCHAR(100),
+    birth_year INTEGER,
+    death_year INTEGER,
+    countries TEXT
+)
+LANGUAGE plpgsql
+AS $$
+BEGIN
+    RETURN QUERY
+    SELECT A.id, A.name, A.birth_year, A.death_year, string_agg(C.name, ', ' ORDER BY C.name) AS countries
+    FROM Astronomer A
+    LEFT JOIN Astronomer_Country AC ON A.id = AC.astronomer_id
+    LEFT JOIN Country C ON AC.country_id = C.id
+    WHERE C.name = p_country_name
+    GROUP BY A.id, A.name, A.birth_year, A.death_year
+    ORDER BY A.name
+    LIMIT p_limit OFFSET p_offset;
+END;
+$$;
