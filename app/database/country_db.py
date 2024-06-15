@@ -4,7 +4,23 @@ import app.data.get.countries as countries_data
 
 conn = connector.get_db_connection()
 
+def transform_countries(countries):
+    """
+    Transform countries to a list of dictionaries for the response
+    """
+    transformed_countries = []
+    for country in countries:
+        transformed_country = Country.Country(country[0], # id (ISO 3166-1 alpha-3 code)
+                                              country[1], # name
+                                              country[2] # continent_name
+                                              )
+        transformed_countries.append(transformed_country.to_dict())
+    return transformed_countries
+
 def upload_countries():
+    """
+    Upload countries to the database
+    """
     # Get countries
     countries = countries_data.get_countries()
 
@@ -19,13 +35,6 @@ def upload_countries():
             print(f"Error uploading countries: {e}")
             conn.rollback()
             raise e
-
-def transform_countries(countries):
-    transformed_countries = []
-    for country in countries:
-        transformed_country = Country.Country(country[0], country[1], country[2])
-        transformed_countries.append(transformed_country.to_dict())
-    return transformed_countries
 
 def get_countries(offset, limit):
     """
