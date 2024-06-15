@@ -1,12 +1,11 @@
 import json
 
-import data.utils.requester as requester
+from app.config.config import Config
 from app.models.country import Country
-from app.config import Config
-
-import data.utils.converter as converter
-import data.utils.validator as validator
-import data.utils.files_managment as files_managment
+import app.data.utils.converter as converter
+import app.data.utils.validator as validator
+import app.data.utils.requester as requester
+import app.data.utils.files_managment as files_managment
 
 # Function to get all countries from the website
 def get_countries():
@@ -16,17 +15,21 @@ def get_countries():
     """
     countries = []
     soup = requester.get_soup(Config.COUNTRIES_SOURCE) # The result is in files/countries
-    files_managment.generate_file("./data/files/countries/countries", ".html", soup.prettify()) # Generate the countries.html file
-    soup = soup.find_all("table", class_="outlinetable")[0] # Get the first table
-    for country_info in soup.find_all("tr")[1:]: # Get all rows except the first one
+    soup_filtered = soup.find_all("table", class_="outlinetable")[0] # Get the first table
+    for country_info in soup_filtered.find_all("tr")[1:]: # Get all rows except the first one
         country_info = country_info.find_all("td") # Get all columns
         country_code = country_info[6].text
-        if not validator.validate_code_country(country_code):
+        if not validator.validate_code_country(country_code): # Validate the country code
+                                                              # In some cases, it has -- instead of a code
             continue
         continent = converter.convert_continent(country_info[0].text)
         country_name = country_info[2].text
         country = Country(country_code, country_name, continent) # Create a country object
         countries.append(country.to_dict())
     data = {"countries": countries}
-    files_managment.generate_file("./data/files/countries/countries", ".json", json.dumps(data, indent=4)) # Generate the countries.html file
+
+    # Generate the files
+    files_managment.generate_file("./data_files/html/countries", ".html", soup.prettify()) # Generate the countries.html file
+    files_managment.generate_file("./data_files/json/countries", ".json", json.dumps(data, indent=4)) # Generate the countries.html file
+    
     return data
