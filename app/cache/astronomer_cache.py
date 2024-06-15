@@ -1,10 +1,11 @@
-import cache.cache as cache
 import json
 
-# Variable to store the connection to the cache
+import app.cache.connector as cache
+
+# Variables
 conn = cache.get_cache_connection()
 
-# Functions to set and get astronomers from the cache
+# Functions
 # All astronomers
 def set_astronomers(astronomers):
     """
@@ -26,3 +27,13 @@ def get_astronomers():
         return json.loads(astronomers) if astronomers else None # Decode the bytes to string
     except Exception as e: # Handle exceptions
         pass
+
+def delete_astronomers():
+    """
+    Delete all astronomers from the cache
+    """
+    try:
+        conn.delete('astronomers') # Delete the key 'astronomers'
+    except Exception as e: # Handle exceptions
+        print(f"Error deleting astronomers from cache: {e}")
+        raise e

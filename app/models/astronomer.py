@@ -50,3 +50,11 @@ class Astronomer:
             "death_year": self.death_year,
             "countries": self.countries
         }
+    
+    def to_dict_no_id(self):
+        return {
+            "name": self.name,
+            "birth_year": self.birth_year,
+            "death_year": self.death_year,
+            "countries": self.countries
+        }
