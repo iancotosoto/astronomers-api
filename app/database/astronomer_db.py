@@ -62,7 +62,8 @@ def get_astronomers(offset, limit):
         cur = conn.cursor()
 
         # Call the user-defined function to get paginated astronomers
-        cur.execute("SELECT * FROM get_paginated_astronomers(%s, %s)", (offset, limit))
+        cur.execute("SELECT id, name, birth_year, death_year, countries \
+                    FROM get_paginated_astronomers(%s, %s)", (offset, limit))
         astronomers = cur.fetchall()
         cur.close()
         t_astronomers = transform_astronomers(astronomers)

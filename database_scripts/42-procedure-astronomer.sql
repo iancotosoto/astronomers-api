@@ -76,6 +76,6 @@ LANGUAGE plpgsql
 AS $$
 BEGIN
     -- Perform the query to count the number of astronomers
-    SELECT COUNT(*) INTO p_astronomer_count FROM Astronomer;
+    SELECT COUNT(id) INTO p_astronomer_count FROM Astronomer;
 END;
 $$;

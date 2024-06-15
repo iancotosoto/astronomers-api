@@ -28,7 +28,7 @@ LANGUAGE plpgsql
 AS $$
 BEGIN
     -- Perform the query to count the number of countries
-    SELECT COUNT(*) INTO p_country_count FROM Country;
+    SELECT COUNT(id) INTO p_country_count FROM Country;
 END;
 $$;
 

@@ -33,7 +33,7 @@ def get_countries(offset, limit):
     """
     try:
         cur = conn.cursor()
-        cur.execute("SELECT * FROM get_paginated_countries(%s, %s)", (offset, limit))
+        cur.execute("SELECT id, name, continent_name FROM get_paginated_countries(%s, %s)", (offset, limit))
         countries = cur.fetchall()
         cur.close()
         t_countries = transform_countries(countries)
