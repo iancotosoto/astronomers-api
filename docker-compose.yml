@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 
 services:
   app:
@@ -22,7 +22,7 @@ services:
       - cache
     volumes:
       - .:/opt/app
-    command: ./start.sh
+    command: /usr/local/bin/start.sh
 
   db:
     image: postgres:16

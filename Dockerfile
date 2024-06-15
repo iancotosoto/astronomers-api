@@ -1,5 +1,11 @@
 FROM python:3.12.2
 
+RUN apt-get update && apt-get install -y wget
+
+# Download wait-for-it.sh
+RUN wget -qO /usr/local/bin/wait-for-it.sh https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh
+RUN chmod +x /usr/local/bin/wait-for-it.sh
+
 ENV DB_HOST='localhost'
 ENV DB_PORT=5432
 ENV DB_NAME='flask_restapi'
@@ -17,12 +23,14 @@ ENV ASTRONOMERS_SOURCE="https://en.wikipedia.org/wiki/List_of_astronomers"
 WORKDIR /opt/app
 
 COPY . .
+
 COPY start.sh /usr/local/bin/start.sh
 RUN chmod +x /usr/local/bin/start.sh
 
 RUN pip install --no-cache-dir -r requirements.txt
 
 VOLUME /data_store
+
 EXPOSE 5000
 
 CMD ["start.sh"]
