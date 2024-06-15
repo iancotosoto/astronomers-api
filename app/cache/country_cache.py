@@ -1,10 +1,11 @@
-import cache.cache as cache
 import json
 
-# Variable to store the connection to the cache
-conn = cache.get_cache_connection()
+import app.cache.connector as connector
 
-# Functions to set and get countries from the cache
+# Variables
+conn = connector.get_cache_connection()
+
+# Functions
 # All countries
 def set_countries(countries):
     """
@@ -26,3 +27,13 @@ def get_countries():
         return json.loads(countries) if countries else None # Decode the bytes to string
     except Exception as e: # Handle exceptions
         pass
+
+def delete_countries():
+    """
+    Delete all countries from the cache
+    """
+    try:
+        conn.delete('countries') # Delete the key 'countries'
+    except Exception as e: # Handle exceptions
+        print(f"Error deleting countries from cache: {e}")
+        raise e

@@ -1,14 +1,13 @@
 import app.models.country as Country
-import database.db as db
-from data.utils.files_managment import read_file
-import json
+import app.database.connector as connector
+import app.data.get.countries as countries_data
 
-conn = db.get_db_connection()
+conn = connector.get_db_connection()
 
 def upload_countries():
-    countries = read_file("./data/files/countries/countries", ".json")
-    countries = json.loads(countries)
-    countries = countries["countries"]
+    # Get countries
+    countries = countries_data.get_countries()
+
     for country in countries:
         try:
             cur = conn.cursor()
@@ -40,3 +39,17 @@ def get_countries():
     except Exception as e:
         print(f"Error getting astronomers: {e}")
         raise e
+    
+def get_countries_count():
+    """
+    Returns the count of countries (0 if no countries found).
+    """
+    try:
+        cur = conn.cursor()
+        cur.execute("CALL get_countries_count(%s);", (None,))
+        result = cur.fetchone()
+        cur.close()
+        return result[0] if result else 0
+    except Exception as e:
+        print(f"Error performing query to check countries: {e}")
+        return 0  
