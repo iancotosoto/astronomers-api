@@ -31,7 +31,9 @@ def get_astronomers():
     data = {"astronomers": astronomers}
 
     # Generate the files
-    files_managment.generate_file("./data_files/html/astronomers", ".html", soup.prettify()) # Generate the countries.html file
     files_managment.generate_file("./data_files/json/astronomers", ".json", json.dumps(data, indent=5, ensure_ascii=False)) # Generate the countries.html file
-    
+    # Add more types of files if needed
+
     return astronomers
+
+get_astronomers()

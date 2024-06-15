@@ -29,7 +29,7 @@ def get_countries():
     data = {"countries": countries}
 
     # Generate the files
-    files_managment.generate_file("./data_files/html/countries", ".html", soup.prettify()) # Generate the countries.html file
     files_managment.generate_file("./data_files/json/countries", ".json", json.dumps(data, indent=4)) # Generate the countries.html file
-    
+    # Add more types of files if needed
+
     return data
