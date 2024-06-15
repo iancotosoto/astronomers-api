@@ -29,19 +29,15 @@ def transform_countries(countries):
 
 def get_countries(offset, limit):
     """
-    Get paginated countries from the database
+    Get paginated countries from the database using a user-defined function
     """
     try:
         cur = conn.cursor()
-        cur.execute(f"""
-        SELECT C.id, C.name, CT.name FROM Country AS C
-        INNER JOIN Continent AS CT ON C.id_continent = CT.id
-        LIMIT {limit} OFFSET {offset}
-        """)
+        cur.execute("SELECT * FROM get_paginated_countries(%s, %s)", (offset, limit))
         countries = cur.fetchall()
-        countries = transform_countries(countries)
         cur.close()
-        return countries
+        t_countries = transform_countries(countries)
+        return t_countries
     except Exception as e:
         print(f"Error getting countries: {e}")
         raise e

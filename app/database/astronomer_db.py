@@ -56,23 +56,17 @@ def upload_astronomers():
 # Get astronomers
 def get_astronomers(offset, limit):
     """
-    Get paginated astronomers from the database
+    Get paginated astronomers from the database using a user-defined function
     """
     try:
         cur = conn.cursor()
-        cur.execute(f"""
-        SELECT A.id, A.name, A.birth_year, A.death_year, string_agg(C.name, ', ' ORDER BY C.name) AS countries
-        FROM Astronomer A
-        LEFT JOIN Astronomer_Country AC ON A.id = AC.astronomer_id
-        LEFT JOIN Country C ON AC.country_id = C.id
-        GROUP BY A.id, A.name, A.birth_year, A.death_year
-        ORDER BY A.id
-        LIMIT {limit} OFFSET {offset}
-        """)
+
+        # Call the user-defined function to get paginated astronomers
+        cur.execute("SELECT * FROM get_paginated_astronomers(%s, %s)", (offset, limit))
         astronomers = cur.fetchall()
-        astronomers = transform_astronomers(astronomers)    
         cur.close()
-        return astronomers
+        t_astronomers = transform_astronomers(astronomers)
+        return t_astronomers
     except Exception as e:
         print(f"Error getting astronomers: {e}")
         raise e

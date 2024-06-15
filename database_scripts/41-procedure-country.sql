@@ -1,6 +1,6 @@
 \connect astronomy_db;
 
--- Get ids
+-- Get
 -- Procedure to get Country ID by name
 CREATE OR REPLACE PROCEDURE get_country_id(
     IN p_country_name VARCHAR(100),
@@ -17,6 +17,18 @@ BEGIN
         p_country_id := NULL;
         RAISE NOTICE 'Country % not found.', p_country_name;
     END IF;
+END;
+$$;
+
+-- Procedure to get the count of countries
+CREATE OR REPLACE PROCEDURE get_countries_count(
+    OUT p_country_count INTEGER
+)
+LANGUAGE plpgsql
+AS $$
+BEGIN
+    -- Perform the query to count the number of countries
+    SELECT COUNT(*) INTO p_country_count FROM Country;
 END;
 $$;
 
@@ -48,17 +60,5 @@ BEGIN
 
     -- Insert the country
     INSERT INTO Country (id, name, id_continent) VALUES (p_country_id, p_country_name, v_continent_id);
-END;
-$$;
-
--- Procedure to get the count of countries
-CREATE OR REPLACE PROCEDURE get_countries_count(
-    OUT p_country_count INTEGER
-)
-LANGUAGE plpgsql
-AS $$
-BEGIN
-    -- Perform the query to count the number of countries
-    SELECT COUNT(*) INTO p_country_count FROM Country;
 END;
 $$;

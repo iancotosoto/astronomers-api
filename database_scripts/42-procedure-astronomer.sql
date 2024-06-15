@@ -1,37 +1,5 @@
 \connect astronomy_db;
 
--- Get all astronomers
-CREATE OR REPLACE PROCEDURE get_astronomers()
-LANGUAGE plpgsql
-AS $$
-DECLARE
-    rec RECORD;
-    astronomer_id INTEGER;
-    astronomer_name VARCHAR(100);
-    birth_year INTEGER;
-    death_year INTEGER;
-    country_list VARCHAR(100);
-BEGIN
-    FOR rec IN
-        SELECT A.id, A.name, A.birth_year, A.death_year, string_agg(C.name, ', ' ORDER BY C.name) AS countries
-        FROM Astronomer A
-        LEFT JOIN Astronomer_Country AC ON A.id = AC.astronomer_id
-        LEFT JOIN Country C ON AC.country_id = C.id
-        GROUP BY A.id, A.name, A.birth_year, A.death_year
-        ORDER BY A.name
-    LOOP
-        astronomer_id := rec.id;
-        astronomer_name := rec.name;
-        birth_year := rec.birth_year;
-        death_year := rec.death_year;
-        country_list := rec.countries;
-
-        RAISE NOTICE 'Astronomer ID: %, Name: %, Birth Year: %, Death Year: %, Countries: %',
-            astronomer_id, astronomer_name, birth_year, death_year, country_list;
-    END LOOP;
-END;
-$$;
-
 -- Get ids
 -- Procedure to get Astronomer ID by name
 CREATE OR REPLACE PROCEDURE get_astronomer_id(

@@ -26,7 +26,7 @@ def post_countries():
     except Exception as e:
         return resp.generate_response("error", f"Error uploading countries: {e}", None, 500)
 
-def get_countries(page, limit):
+def get_countries(page=1, limit=10):
     """
     Get all countries
     """
