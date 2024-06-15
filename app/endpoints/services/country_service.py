@@ -45,7 +45,7 @@ def get_countries(page=1, limit=10):
         countries = country_db.get_countries(offset, limit)
 
         if not countries: # Countries is an empty list
-            return resp.generate_response("success", "No countries found in database", None, 200)
+            return resp.generate_response("error", "No countries found in database", None, 404)
         
         # Set countries in cache
         country_cache.set_countries(countries, offset, limit)
