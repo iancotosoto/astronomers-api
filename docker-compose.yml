@@ -29,7 +29,6 @@ services:
     environment:
       POSTGRES_USER: autorized_user
       POSTGRES_PASSWORD: 7Ty3m109krJE3O3U
-      POSTGRES_DB: astronomy_db
     networks:
       - web
     volumes:
