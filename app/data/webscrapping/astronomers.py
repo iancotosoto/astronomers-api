@@ -35,5 +35,3 @@ def get_astronomers():
     # Add more types of files if needed
 
     return astronomers
-
-get_astronomers()

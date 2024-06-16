@@ -5,7 +5,7 @@ wait-for-it.sh -t 30 db:5432 -- echo "PostgreSQL is up"
 wait-for-it.sh -t 30 cache:6379 -- echo "Redis is up"
 
 # Execute the tests
-pytest app/tests
+pytest tests
 
 # Run the application if the tests pass
 if [ $? -eq 0 ]
