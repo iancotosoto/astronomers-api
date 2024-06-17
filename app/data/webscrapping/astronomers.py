@@ -4,7 +4,7 @@ from app.config.config import Config
 from app.models.astronomer import Astronomer
 import app.data.utils.requester as requester
 import app.data.utils.converter as converter
-import app.data.utils.files_managment as files_managment
+import app.data.utils.files_management as files_management
 
 # Functions
 # Function to get all countries from the website
@@ -31,7 +31,7 @@ def get_astronomers():
     data = {"astronomers": astronomers}
 
     # Generate the files
-    files_managment.generate_file("./data_files/json/astronomers", ".json", json.dumps(data, indent=5, ensure_ascii=False)) # Generate the countries.html file
+    files_management.generate_file("./data_files/json/astronomers", ".json", json.dumps(data, indent=5, ensure_ascii=False)) # Generate the countries.html file
     # Add more types of files if needed
 
     return astronomers

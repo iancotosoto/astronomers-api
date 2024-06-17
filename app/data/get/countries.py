@@ -1,6 +1,6 @@
 import json
 
-from app.data.utils.files_managment import read_file
+from app.data.utils.files_management import read_file
 
 # Functions
 # Get countries

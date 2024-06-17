@@ -5,7 +5,7 @@ from app.models.country import Country
 import app.data.utils.converter as converter
 import app.data.utils.validator as validator
 import app.data.utils.requester as requester
-import app.data.utils.files_managment as files_managment
+import app.data.utils.files_management as files_management
 
 # Function to get all countries from the website
 def get_countries():
@@ -29,7 +29,7 @@ def get_countries():
     data = {"countries": countries}
 
     # Generate the files
-    files_managment.generate_file("./data_files/json/countries", ".json", json.dumps(data, indent=4)) # Generate the countries.html file
+    files_management.generate_file("./data_files/json/countries", ".json", json.dumps(data, indent=4)) # Generate the countries.html file
     # Add more types of files if needed
 
     return data
