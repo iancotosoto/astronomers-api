@@ -1,4 +1,5 @@
 import pytest
+
 from app.models.continent import Continent
 
 @pytest.fixture

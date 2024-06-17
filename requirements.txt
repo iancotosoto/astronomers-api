@@ -5,3 +5,4 @@ redis
 requests
 beautifulsoup4
 pytest
+requests_mock

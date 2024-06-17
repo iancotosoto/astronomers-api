@@ -1,7 +1,7 @@
 import json
 import pytest
-from unittest.mock import patch, MagicMock
 from bs4 import BeautifulSoup
+from unittest.mock import patch, MagicMock
 from app.data.webscrapping.countries import get_countries
 
 @pytest.fixture
@@ -41,7 +41,7 @@ def mock_generate_file():
 @patch('app.data.utils.requester.get_soup')
 @patch('app.data.utils.validator.validate_code_country')
 @patch('app.data.utils.converter.convert_continent')
-@patch('app.data.utils.files_managment.generate_file')
+@patch('app.data.utils.files_management.generate_file')
 def test_get_countries(mock_generate_file, mock_convert_continent, mock_validate_code_country, mock_get_soup, mock_soup, mock_requests_get):
     mock_get_soup.return_value = mock_soup
     mock_validate_code_country.side_effect = lambda code: code != "--"

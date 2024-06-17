@@ -1,4 +1,5 @@
 import pytest
+
 from app.models.country import Country
 
 @pytest.fixture

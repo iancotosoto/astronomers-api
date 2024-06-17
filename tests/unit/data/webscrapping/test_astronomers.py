@@ -1,8 +1,8 @@
 import json
 import pytest
-from unittest.mock import patch, MagicMock
 from bs4 import BeautifulSoup
-from app.data.utils import requester, converter, files_managment
+from unittest.mock import patch, MagicMock
+
 from app.data.webscrapping.astronomers import get_astronomers
 
 @pytest.fixture
@@ -28,7 +28,7 @@ def mock_generate_file():
 
 @patch('app.data.utils.requester.get_soup')
 @patch('app.data.utils.converter.convert_year')
-@patch('app.data.utils.files_managment.generate_file')
+@patch('app.data.utils.files_management.generate_file')
 def test_get_astronomers(mock_generate_file, mock_convert_year, mock_get_soup, mock_soup, mock_requests_get):
     mock_get_soup.return_value = mock_soup
     mock_convert_year.side_effect = lambda year: {

@@ -1,6 +1,5 @@
-import json
-import pytest
 from unittest.mock import patch, mock_open
+
 from app.data.get.astronomers import get_astronomers
 
 @patch('builtins.open', new_callable=mock_open, read_data='{"astronomers": \
