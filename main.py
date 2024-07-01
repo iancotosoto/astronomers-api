@@ -1,7 +1,7 @@
 from flask import Flask
 
-from app.endpoints.routes.astronomer_routes import astronomer_routes
-from app.endpoints.routes.country_routes import country_routes
+from src.app.endpoints.routes.astronomer_routes import astronomer_routes
+from src.app.endpoints.routes.country_routes import country_routes
 
 # Create the Flask app
 app = Flask(__name__, static_url_path='/static')
